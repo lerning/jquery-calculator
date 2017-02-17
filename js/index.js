@@ -1,26 +1,9 @@
 $('document').ready(function(){
 
 let number = ''
-// let oparray = []
 let operator = ''
 let prevnumber = ''
 let answer = 0
-
-// string = '9 * 5'
-// function mathymath() {
-//
-// //    oparray = []
-// //    for (thing in string){
-// //       if (!isNaN(parseInt(string[thing]))){
-// //          oparray.push(parseInt(string[thing]))
-// //       } else if (thing == '+' || thing == '-' || thing == '*' || thing == '÷'){
-// //          oparray.push(string[thing])
-// //       }
-// //
-// //    } console.log(oparray);
-// // }
-// }
-// mathymath('9 * 5')
 
 //this strains the buttons for numbers and allows them to show up on the screen when clicked
    $('span').click(function(){
@@ -31,7 +14,6 @@ let answer = 0
          number += symbol
       }
    })
-
    $('.operator').click(function(){
       var $target = $(event.target);
       //This allows the clear button to clear the screen when clicked
@@ -39,9 +21,10 @@ let answer = 0
          $('#clear').click(function(){
             $('#screen').text('')
             number = ''
-            // oparray = []
          })
-      } //this provides functionality = sign
+      } //this provides functionality to the = sign
+       //it uses the current operator to operate on number/prevnumber
+       //then it sets the screen to the answer
       else if (($target).text() == '='){
          // console.log($('#screen').text());
          console.log('= number', number);
@@ -60,38 +43,51 @@ let answer = 0
             ans = (parseInt(prevnumber)/parseInt(number))
             $('#screen').text(ans)
          }
-
-         console.log('= pint number', parseInt(number));
          number = ans
-         console.log('ans', ans);
          operator = ''
-         // console.log(eval($('#screen').text()));
-         // $('#screen').text(eval($('#screen').text()))
+         // console.log('= pint number', parseInt(number));
+         // console.log('ans', ans);
 
-      } //this provides functionality to the + - * / operands
+      } //this sets number to prevnumber (giving space for subsequent number to
+       //become number. the operator variable is then set to the operator pressed
       else {
-         // console.log(($target).text());
          $('#screen').text($('#screen').text() + ' ' + $target.text() + ' ')
-         // console.log(number);
          prevnumber = parseInt(number)
          opnumber = number
          number = ''
          operator += ($target).text()
-         if (($target).text() == '+'){
-            // answer = parseInt(prevnumber) + parseInt(opnumber)
-            console.log('+ answer!', answer);
-            console.log('+ number', number);
-            console.log('+ prevnumber', prevnumber);
-            console.log('op number', opnumber);
-            console.log('pint opnumber',parseInt(opnumber));
-            // prevnumber += (parseInt(prevnumber) + parseInt(number))
-
-         }
       }
    })
-
-
-
-
-
 })
+
+
+// string = '9 * 5'
+// function mathymath() {
+//
+// //    oparray = []
+// //    for (thing in string){
+// //       if (!isNaN(parseInt(string[thing]))){
+// //          oparray.push(parseInt(string[thing]))
+// //       } else if (thing == '+' || thing == '-' || thing == '*' || thing == '÷'){
+// //          oparray.push(string[thing])
+// //       }
+// //
+// //    } console.log(oparray);
+// // }
+// }
+// mathymath('9 * 5')
+
+
+
+
+
+// if (($target).text() == '+'){
+//    // answer = parseInt(prevnumber) + parseInt(opnumber)
+//    console.log('+ answer!', answer);
+//    console.log('+ number', number);
+//    console.log('+ prevnumber', prevnumber);
+//    console.log('op number', opnumber);
+//    console.log('pint opnumber',parseInt(opnumber));
+//    // prevnumber += (parseInt(prevnumber) + parseInt(number))
+//
+// }
