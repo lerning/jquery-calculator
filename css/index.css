@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:700|Orbitron);
 
 body {
-  background: #71B66F;
+  background: #8c61be;
   box-sizing: border-box;
   margin: 0;
   padding: 20px;
@@ -24,7 +24,7 @@ body {
 }
 
 #screen {
-  background: #EF5D5D;
+  background: #7ac0f4;
   border: none;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.4em;
